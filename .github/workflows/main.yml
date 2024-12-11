@@ -13,15 +13,13 @@ jobs:
       # Checkout your github code using actions/checkout@v2.5.0
       - uses: actions/checkout@v2.5.0
 
+      - name: Install dependencies
+        working-directory: ./
+        run: npm i
+
       # Do the same with another action (actions/setup-java@v3) that enable to setup jdk 17
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-package: jdk
-          check-latest: false
-          server-id: github
-          overwrite-settings: true
-          job-status: success
+        uses: actions/setup-java@v4
 
       # Finally build your app with the latest command
       - name: Build and test with Maven
