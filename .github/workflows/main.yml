@@ -19,7 +19,15 @@ jobs:
 
       # Do the same with another action (actions/setup-java@v3) that enable to setup jdk 17
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
+        with:
+          java-package: jdk
+          distribution: temurin
+          java-version: 17
+          check-latest: true
+          
+      - name: Install dependencies
+        run: mvn dependency:resolve
 
       # Finally build your app with the latest command
       - name: Build and test with Maven
