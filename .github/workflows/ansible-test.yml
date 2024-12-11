@@ -13,6 +13,10 @@ jobs:
       # Checkout your github code using actions/checkout@v2.5.0
       - uses: actions/checkout@v2.5.0
 
+      - name: SSH command
+        working-directory: ansible
+        run: ssh -i "C:\Users\louis\Downloads\id_rsa" admin@chelsie.louis.takima.cloud
+
       - name: Test inventory with the ping command
         working-directory: ansible
         run: ansible all -i inventories/setup.yml -m ping
