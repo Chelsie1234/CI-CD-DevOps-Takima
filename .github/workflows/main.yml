@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main", "dev"]
   pull_request:
-    branches: ["main", "dev"]
+    branches: ["main"]
 
 jobs:
   test-backend: 
@@ -13,9 +13,9 @@ jobs:
       # Checkout your github code using actions/checkout@v2.5.0
       - uses: actions/checkout@v2.5.0
 
-      - name: Install dependencies
-        working-directory: ./
-        run: npm i
+      # - name: Install dependencies
+      #   working-directory: ./
+      #   run: npm i
 
       # Do the same with another action (actions/setup-java@v3) that enable to setup jdk 17
       - name: Set up JDK 17
