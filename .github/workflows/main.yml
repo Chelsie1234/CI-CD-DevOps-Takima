@@ -26,8 +26,8 @@ jobs:
           java-version: 17
           check-latest: true
           
-      - name: Install dependencies
-        run: mvn dependency:resolve
+      # - name: Install dependencies
+      #   run: mvn dependency:resolve
 
       # Finally build your app with the latest command
       - name: Build and test with Maven
