@@ -3,12 +3,6 @@ on:
   workflow_run:
     workflows: ["CI DevOps 2024"]
     types: completed # Triggers only when the triggering workflow has completed
-    
-  # To begin you want to launch this job in main
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 jobs:
   # Define job to build and publish docker image
