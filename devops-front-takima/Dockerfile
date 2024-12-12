@@ -1,4 +1,4 @@
-FROM node:12.16.3-stretch-slim AS build
+FROM node:23-slim AS build
 
 WORKDIR /opt/front
 
