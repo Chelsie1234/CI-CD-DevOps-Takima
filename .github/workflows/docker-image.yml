@@ -58,6 +58,9 @@ jobs:
            # Build on feature branches, push only on main branch
            push: ${{ github.ref == 'refs/heads/main' }}
 
-      - name: Clear Docker Credentials
-        run: |
-          docker logout
+      - name: Launch Docker Container for the Frontend
+        run: docker run -p 8080:80 .\devops-front-takima\
+
+      # - name: Clear Docker Credentials
+      #   run: |
+      #     docker logout
