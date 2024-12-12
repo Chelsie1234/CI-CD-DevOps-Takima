@@ -8,6 +8,14 @@ services:
       - my-network
     depends_on:
       - database
+  
+  frontend:
+    build: ./devops-front-takima
+    container_name: frontend
+    networks:
+      - my-network
+    depends_on:
+      - database
 
   database:
     build: ./database
