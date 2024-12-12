@@ -1,0 +1,11 @@
+---
+# tasks file for roles/database
+
+- name: Run DATABASE
+  docker_container:
+    name: my-db
+    image: "chelsiels/tp-devops-simple-api:database"
+    pull: always
+    state: started
+    networks:
+      - name: my-network
