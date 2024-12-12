@@ -1,0 +1,16 @@
+---
+# tasks file for roles/app
+
+- name: Run BACKEND
+  docker_container:
+    name: my-api
+    image: "chelsiels/tp-devops-simple-api:backend"
+    networks:
+      - name: my-network
+
+- name: Run FRONTEND
+  docker_container:
+    name: frontend
+    image: "chelsiels/tp-devops-simple-api:frontend"
+    networks:
+      - name: my-network
