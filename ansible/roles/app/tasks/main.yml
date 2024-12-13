@@ -12,5 +12,8 @@
   docker_container:
     name: frontend
     image: "chelsiels/tp-devops-simple-api:frontend"
+    state: started
     networks:
       - name: my-network
+    ports:
+      - "8080:80"
